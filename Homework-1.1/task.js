@@ -1,11 +1,14 @@
-const countTime  = function(){
-    const output = document.getElementById("timer");
-
-    if (output.textContent >= 1){
-        output.textContent --;
-    }	else if(output.textContent = '0'){
-        alert("Время кончилось!");
+let timer;
+let x =59;
+countdown();
+function countdown(){
+    document.getElementById('timer').innerHTML = x;
+    x--;
+    if (x<0){
+        clearTimeout(timer);
+        alert ("Вы победили в конкурсе!");
+    }
+    else {
+        timer = setTimeout(countdown, 1000); 
     }
 }
-
-setInterval(countTime,1000);
