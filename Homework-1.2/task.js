@@ -7,8 +7,8 @@ image.addEventListener('click', function(){
 })
 
 window.onload = function(){
-var i = 0;
- var image = document.getElementById("cookie");
+let i = 0;
+ let image = document.getElementById("cookie");
   image.onclick = function(){
    if (i==0){
    this.style.width= '300px';
