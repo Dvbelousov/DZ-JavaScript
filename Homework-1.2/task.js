@@ -1,21 +1,6 @@
-const image = document.getElementById("cookie");
-const cliker = document.getElementById("clicker__counter");
-counter = 0;
-image.addEventListener('click', function(){
-  counter ++;
-  cliker.textContent = + counter; 
-})
+const cookie = document.getElementById("cookie");
+const clickerCounter = document.getElementById("clicker__counter");
 
-window.onload = function(){
-let i = 0;
- let image = document.getElementById("cookie");
-  image.onclick = function(){
-   if (i==0){
-   this.style.width= '300px';
-   i = 1;
-   }else if(i==1){
-    this.style.width= '200px';
-    i = 0;
-    }
-  }
-};
+cookie.addEventListener("click", function () {
+  cookie.width = ++clickerCounter.textContent % 2 ? 250 : 200;
+});
