@@ -1,12 +1,28 @@
+let dead = document.getElementById("dead");
+let lost = document.getElementById("lost");  
 
-const deadHole = document.getElemetById("dead");
-counter = 0;
-deadHole.onclick = function(){
-counter ++;
-deadHole.textContent = + counter;
+
+getHole = index => document.getElementById(`hole${index}`);
+
+for (let holeCheck = 1; holeCheck < 10; holeCheck++) {
+    let hole = getHole(holeCheck);
+    hole.onclick = () => {
+        if (hole.className.includes("hole_has-mole") == true) {
+            dead.textContent ++;
+            if (dead.textContent === "10") {
+                alert ("Победа!");
+                allStop();
+            }
+        } else {lost.textContent ++;
+            if (lost.textContent === "5") {
+                alert ("Не победа :(");
+                allStop();
+            }
+        }
+    }
 }
-const holeFirst = document.getElemetById("hole1");
-for(let i = 0; i < holeFirst.length; i++){
-	if(hole.className.includes('hole_has-mole')){
-		return deadHole.textContent = + counter;
-	}
+
+allStop = () => {
+    dead.textContent = 0;
+    lost.textContent = 0;
+}
